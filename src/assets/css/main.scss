@@ -1,0 +1,98 @@
+:root {
+    --bgcolor: white;
+    --fontcolor: black;
+    --left-top-font: 4vw;
+    --left-bottom-font: 4vw;
+    --right-top-font: 12vw;
+    --right-bottom-font: 4vw;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Verdana;
+    color: var(--fontcolor);
+}
+
+.grid {
+    display: grid;
+    position: absolute;
+    grid-template: repeat(2, 2fr) 1fr / 0.5fr 2fr 0.5fr;
+    width: 100%;
+    height: 100%;
+    .tile {
+        background-color: var(--bgcolor);
+        padding: 2vw;
+    }
+    .leftTop {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        grid-area: span 1 / span 1;
+        font-size: 34px;
+        font-size: var(--left-top-font);
+    }
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: span 2 / span 1;
+        font-size: var(--center-font);
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .leftBottom {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        text-align: left;
+        grid-area: span 1 / span 1;
+        font-size: var(--left-bottom-font);
+    }
+    .rightTop {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        grid-area: span 1 / span 1;
+        font-size: var(--right-top-font);
+        &:after {
+            content: '\2103';
+        }
+    }
+    .rightBottom {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        text-align: right;
+        grid-area: span 1 / span 1;
+        font-size: var(--right-bottom-font);
+    }
+    .navBar {
+        grid-column: span 3;
+        display: flex;
+        flex-direction: row;
+        align-items: space-around;
+        justify-content: center;
+        .navItem {
+            padding: 2vw;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
