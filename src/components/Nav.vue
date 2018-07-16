@@ -1,9 +1,10 @@
 <template>
-    <div :class="['tile', data.title]">
+    <div :class="['nav', data.title]">
 
-        <ul v-for="item in data.content" :key="item">
-          <li @click="changeLocation(item)">  {{ item }}</li>
+        <ul >
+          <li v-for="item in data.content" :key="item" @click="changeLocation(item)">  {{ item }}</li>
         </ul>
+        
     </div>
 </template>
 
